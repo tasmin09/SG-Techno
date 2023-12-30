@@ -2,7 +2,6 @@
 
 
 // HERO SECTION
-
 .heroSectionContainer {
   width: 100vw;
   height: 100vh !important;
@@ -14,24 +13,25 @@
     display: flex;
     margin-top: 8rem;
   }
-
   .workerImg1{
     position: relative;
     bottom: 8rem;
     right: 10rem;
   }
-
   .welcomeText p{
     font-size: 1.1rem !important;
     line-height: 1.8rem !important;
   }
-
+  
   .contactUsBtn{
     margin-top: 2rem;
     padding: 1.6rem 3.2rem !important;
     font-size: 1.8rem!important;
     border-radius:3rem !important ;
   }
+
+
+  
 
   @media screen and (min-width: 1200px) and (max-width: 1370px) {
     justify-content: center;
@@ -72,6 +72,14 @@
         width: clamp-value(110, 280);
       }
     }
+
+    .missionTextContainer {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      background-color: red!important;
+    }
+
 
     .blendingImg {
       margin: 10vh 0 0;

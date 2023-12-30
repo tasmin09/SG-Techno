@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./style.module.scss";
 import blendingImg from "../../assets/texts/blend.svg";
 import workerImg from "../../assets/images/workersImg.webp";
@@ -9,8 +9,7 @@ import workerImg2 from "../../assets/images/worker-img-2.jpg";
 import workerImg3 from "../../assets/images/worker-img-3.jpg";
 import Image from "next/image";
 import ContactUsModal from "../NavigationBar/ContactUsModal";
-
-
+import { motion } from "framer-motion";
 
 const HeroSection = ({ sectionRef }: { sectionRef: any }) => {
   const [open, setOpen] = useState(false);
@@ -20,13 +19,18 @@ const HeroSection = ({ sectionRef }: { sectionRef: any }) => {
   };
 
   return (
-    <>
+    <motion.div 
+    initial={{ opacity: 0 }}
+     animate={{ opacity: 3 }}
+      transition={{ duration: 3 }}
+     >
       <section
         className={`${styles.heroSectionContainer} heroSection`}
         ref={sectionRef}
       >
-        <div className="leftSection" >
-          <div className={styles.banner_img}>
+        <div className="leftSection">
+          <div
+           className={styles.banner_img}>
             <Image src={blendingImg} alt="blending" width={700} height={300} />
             <Image
               src={workerImg1}
@@ -37,8 +41,9 @@ const HeroSection = ({ sectionRef }: { sectionRef: any }) => {
             />
           </div>
 
-          <div>
-        
+          <div
+            className={styles.welcomeTextContainer}
+          >
             <article className={styles.welcomeText}>
               <p>
                 Welcome to <b>SG Technofab</b>, we are dedicated to providing
@@ -116,7 +121,7 @@ const HeroSection = ({ sectionRef }: { sectionRef: any }) => {
         </button>
       </section>
       <ContactUsModal open={open} setOpen={setOpen} />
-    </>
+    </motion.div>
   );
 };
 
